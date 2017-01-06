@@ -12,3 +12,6 @@ RUN rpm --import https://mirrors.ripple.com/rpm/RPM-GPG-KEY-ripple-release && rp
 RUN alien -i --scripts rippled*.rpm && rm rippled*.rpm
 
 ENTRYPOINT ["/opt/ripple/bin/rippled"]
+
+EXPOSE 51235 5005 5006
+VOLUME /data /etc/rippled.conf
